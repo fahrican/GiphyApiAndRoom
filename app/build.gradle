@@ -41,6 +41,13 @@ android {
 }
 
 dependencies {
+
+    def androidx_version = '1.1.0'
+    def retrofit_version = '2.7.2'
+    def dagger_version = '2.26'
+    def room_version = "2.2.5"
+    def first_stable_version = '1.0.0'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
