@@ -1,6 +1,10 @@
 package com.example.giphyapiandroom.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Images(
-    val fixed_height: FixedHeight,
-    val fixed_height_small_still: FixedHeightSmallStill
+    @SerializedName("fixed_height")
+    val fixedHeight: FixedHeight,
+    @SerializedName("fixed_height_small_still")
+    val fixedHeightSmallStill: FixedHeightSmallStill
 )
