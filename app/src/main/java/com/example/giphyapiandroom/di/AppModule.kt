@@ -7,7 +7,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class AppModule {
+class AppModule { //todo: add abstract
 
     @Singleton
     @Provides
