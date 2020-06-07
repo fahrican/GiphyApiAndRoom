@@ -214,6 +214,9 @@ fabric.properties
 *.tar.gz
 *.rar
 
+# Files in the project where version control should not be used
+Config.kt
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 
 ### Kotlin ###
