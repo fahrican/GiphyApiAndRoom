@@ -10,7 +10,7 @@ data class DataEntity(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Int,
+    val id: Int = 0,
     @ColumnInfo(name = "images")
     val images: String,
     @ColumnInfo(name = "title")
