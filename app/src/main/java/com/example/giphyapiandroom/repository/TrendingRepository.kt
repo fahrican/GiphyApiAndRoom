@@ -100,8 +100,6 @@ class TrendingRepository {
             )
     }
 
-    fun fetchDataFromDatabase() {
-        getTrendingQuery()
-    }
+    fun fetchDataFromDatabase(): Disposable = getTrendingQuery()
 
 }
