@@ -10,7 +10,7 @@ interface GiphyApi {
 
     @GET("v1/gifs/trending")
     fun getTrending(
-        @Query("api_key") api_key: String, //todo: use camelCase
+        @Query("api_key") apiKey: String,
         @Query("limit") limit: String,
         @Query("rating") rating: String
     ): Flowable<TrendingResult>
