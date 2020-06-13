@@ -25,8 +25,8 @@
 
             <LinearLayout
                 android:id="@+id/image_container"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_margin="8dp"
                 android:layout_marginEnd="8dp"
                 android:orientation="vertical"
@@ -36,8 +36,8 @@
 
                 <ImageView
                     android:id="@+id/trending_image"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     app:imageUrl="@{data.images.fixedHeightSmallStill.url}"
                     tools:src="@drawable/ic_launcher_background" />
 
