@@ -64,12 +64,9 @@ dependencies {
     // Glide for Images
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
-    // Gson //todo: use Moshi instead of GSON
-    implementation "com.google.code.gson:gson:2.8.5"
-
     // Retrofit 2
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
 
