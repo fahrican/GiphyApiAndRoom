@@ -38,7 +38,7 @@
                     android:id="@+id/trending_image"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:imageUrl="@{data.images.fixedHeight.url}"
+                    app:imageUrl="@{data.images.fixedHeightSmallStill.url}"
                     tools:src="@drawable/ic_launcher_background" />
 
             </LinearLayout>
