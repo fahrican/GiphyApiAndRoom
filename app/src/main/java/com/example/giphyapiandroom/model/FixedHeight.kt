@@ -1,16 +1,16 @@
 package com.example.giphyapiandroom.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class FixedHeight(
     val height: String,
     val mp4: String,
-    @SerializedName("mp4_size")
+    @field:Json(name = "mp4_size")
     val mp4Size: String,
     val size: String,
     val url: String,
     val webp: String,
-    @SerializedName("webp_size")
+    @field:Json(name = "webp_size")
     val webpSize: String,
     val width: String
 )
