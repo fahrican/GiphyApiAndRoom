@@ -17,7 +17,7 @@ class AppModule {
     fun provideApi(): GiphyApi = GiphyApiService.getClient()
 
     @Provides
-    fun provideTrendingRepository(): TrendingRepository = TrendingRepository() //todo: simplify this
+    fun provideTrendingRepository() = TrendingRepository()
 
     @Provides
     fun provideListData() = ArrayList<Data>()
