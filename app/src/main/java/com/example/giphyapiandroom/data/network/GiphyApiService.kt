@@ -10,47 +10,18 @@ import java.util.concurrent.TimeUnit
 
 object GiphyApiService {
 
-    // Here gets the HTTP request logged to Logcat
-    private fun generateInterceptorCallback(): Interceptor {
-        return object : Interceptor {
-            override fun intercept(chain: Interceptor.Chain): Response {
-                val originalRequest: Request = chain.request()
-                val request = originalRequest.newBuilder().build()
-                return chain.proceed(request)
-            }
-        }
-    }
-
-    // Add Interceptor and connection timeout
-    private fun createOkHttpClient(requestInterceptor: Interceptor): OkHttpClient {
+    private fun createOkHttpClient(): OkHttpClient {
         val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-
         return OkHttpClient.Builder()
-            .addInterceptor(requestInterceptor)
-            .addInterceptor(generateInterceptorCallback())
             .addInterceptor(logger)
-            .connectTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
             .build()
     }
 
     fun getClient(): GiphyApi {
-        val requestInterceptor = Interceptor { chain ->
-            val url: HttpUrl = chain.request()
-                .url
-                .newBuilder()
-                .build()
-
-            val request: Request = chain.request()
-                .newBuilder()
-                .url(url)
-                .build()
-
-            return@Interceptor chain.proceed(request)
-        }
-        val okHttpClient = createOkHttpClient(requestInterceptor)
-
         return Retrofit.Builder()
-            .client(okHttpClient)
+            .client(createOkHttpClient())
             .baseUrl(BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create())
