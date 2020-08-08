@@ -6,7 +6,7 @@ import com.example.giphyapiandroom.model.Images
 
 
 fun DataEntity.toData() = Data(
-    Images(FixedHeightSmallStill("100", "8021", this.images, "100")),
+    Images(FixedHeightSmallStill(this.images, "320", "420")),
     this.title,
     this.type,
     this.username
