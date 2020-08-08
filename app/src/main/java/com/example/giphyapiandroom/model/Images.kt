@@ -3,6 +3,6 @@ package com.example.giphyapiandroom.model
 import com.squareup.moshi.Json
 
 data class Images(
-    @field:Json(name = "fixed_height_small_still")
+    @field:Json(name = "480w_still")
     val fixedHeightSmallStill: FixedHeightSmallStill
 )
